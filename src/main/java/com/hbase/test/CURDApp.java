@@ -134,42 +134,42 @@ public class CURDApp {
     public void insertData() throws IOException {
 
         String tableName = "student"; //表名:student
-        String rowkey1001 = "rk1001"; //行健:rk1001
+        String rowkey1001 = "rk1005"; //行健:rk1001
         String family1 = "f1"; //列簇:f1  学生信息
-        String rk1f1name = "name";
-        String rk1f1nameValue = "张三";
-        String rk1f1age = "age";
-        String rk1f1ageValue = "22";
+//        String rk1f1name = "name";
+//        String rk1f1nameValue = "二蛋";
+//        String rk1f1age = "age";
+//        String rk1f1ageValue = "26";
 
         String family2 = "f2"; //列簇:f2  各科成绩
         String rk1f2chinese = "chinese";
-        String rk1f2chineseScore = "90";
+        String rk1f2chineseScore = "103";
         String rk1f2math = "math";
-        String rk1f2mathScore = "95";
+        String rk1f2mathScore = "79";
         String rk1f2english = "english";
-        String rk1f2englishScore = "89";
+        String rk1f2englishScore = "69";
 
-        String rowkey1002 = "rk1002";
-        String rk2f1name = "name";
-        String rk2f1nameValue = "李四";
-        String rk2f1age = "age";
-        String rk2f1ageValue = "25";
+//        String rowkey1002 = "rk1002";
+//        String rk2f1name = "name";
+//        String rk2f1nameValue = "李四";
+//        String rk2f1age = "age";
+//        String rk2f1ageValue = "25";
         HTable hTable = new HTable(conf, tableName);
         Put put1 = new Put(rowkey1001.getBytes()); //行健:rk1001
-        put1.add(family1.getBytes(), rk1f1name.getBytes(), rk1f1nameValue.getBytes());
-        put1.add(family1.getBytes(), rk1f1age.getBytes(), rk1f1ageValue.getBytes());
+//        put1.add(family1.getBytes(), rk1f1name.getBytes(), rk1f1nameValue.getBytes());
+//        put1.add(family1.getBytes(), rk1f1age.getBytes(), rk1f1ageValue.getBytes());
         put1.add(family2.getBytes(), rk1f2chinese.getBytes(), rk1f2chineseScore.getBytes());
         put1.add(family2.getBytes(), rk1f2math.getBytes(), rk1f2mathScore.getBytes());
         put1.add(family2.getBytes(), rk1f2english.getBytes(), rk1f2englishScore.getBytes());
-        Put put2 = new Put(rowkey1002.getBytes()); //行健:rk1002
-        put2.add(family1.getBytes(), rk2f1name.getBytes(), rk2f1nameValue.getBytes());
-        put2.add(family1.getBytes(), rk2f1age.getBytes(), rk2f1ageValue.getBytes());
+//        Put put2 = new Put(rowkey1002.getBytes()); //行健:rk1002
+//        put2.add(family1.getBytes(), rk2f1name.getBytes(), rk2f1nameValue.getBytes());
+//        put2.add(family1.getBytes(), rk2f1age.getBytes(), rk2f1ageValue.getBytes());
 
         hTable.put(put1);
-        hTable.put(put2);
+//        hTable.put(put2);
         hTable.close();
         System.out.println("添加记录" + rowkey1001 + "成功");
-        System.out.println("添加记录" + rowkey1002 + "成功");
+//        System.out.println("添加记录" + rowkey1002 + "成功");
     }
 
     /**
